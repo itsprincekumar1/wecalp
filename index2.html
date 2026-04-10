@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WeCalp – A calm, nurturing therapy center for special needs children. High-quality, results-oriented services since 2022.">
+    <title>WeCalp – Gentle Care for Special Children</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: #FDF8F5;
+            color: #4A3F5C;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; font-weight: 600; }
+
+        :root {
+            --peach: #FFD1B3;
+            --lavender: #D5C6F0;
+            --baby-blue: #B8D8F0;
+            --mint: #C8E6D0;
+            --rose: #F5C6D0;
+            --cream: #FDF8F5;
+            --white: #FFFFFF;
+            --text: #4A3F5C;
+            --text-muted: #8A7FA0;
+            --shadow: 0 4px 24px rgba(74,63,92,0.06);
+            --shadow-hover: 0 8px 36px rgba(74,63,92,0.1);
+            --radius: 20px;
+        }
+
+        /* Gentle floating blobs */
+        .blob {
+            position: absolute; border-radius: 50%;
+            filter: blur(60px); opacity: 0.3;
+            pointer-events: none; z-index: 0;
+        }
+
+        /* Reveal */
+        .reveal {
+            opacity: 0; transform: translateY(30px);
+            transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* ===== NAV ===== */
+        .nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(253,248,245,0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(213,198,240,0.3);
+            padding: 14px 0;
+        }
+        .nav-inner {
+            max-width: 1100px; margin: 0 auto; padding: 0 24px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700; font-size: 1.6rem;
+            color: var(--text);
+            letter-spacing: -0.5px;
+        }
+        .nav-logo span { color: #C5A3FF; }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a {
+            font-weight: 600; font-size: 0.92rem; color: var(--text-muted);
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--text); }
+        .nav-cta-btn {
+            background: linear-gradient(135deg, #D5C6F0, #B8D8F0);
+            color: var(--text); padding: 10px 28px;
+            border-radius: 50px; border: none;
+            font-weight: 700; font-size: 0.9rem;
+            cursor: pointer; transition: all 0.3s;
+            box-shadow: 0 4px 16px rgba(213,198,240,0.4);
+        }
+        .nav-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(213,198,240,0.5); }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+        .hamburger span { display: block; width: 26px; height: 2.5px; background: var(--text); margin: 5px 0; border-radius: 2px; transition: 0.3s; }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center;
+            padding: 120px 24px 80px;
+            position: relative; overflow: hidden;
+        }
+        .hero .blob-1 {
+            width: 500px; height: 500px; background: var(--lavender);
+            top: -100px; right: -100px;
+        }
+        .hero .blob-2 {
+            width: 400px; height: 400px; background: var(--peach);
+            bottom: -80px; left: -80px;
+        }
+        .hero-inner {
+            max-width: 1100px; margin: 0 auto; width: 100%;
+            display: flex; flex-direction: column; align-items: center;
+            text-align: center; position: relative; z-index: 1;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(213,198,240,0.25); backdrop-filter: blur(10px);
+            padding: 8px 20px; border-radius: 50px;
+            font-size: 0.85rem; font-weight: 600; color: var(--text-muted);
+            margin-bottom: 24px; border: 1px solid rgba(213,198,240,0.3);
+        }
+        .hero h1 {
+            font-size: 3.8rem; line-height: 1.15;
+            color: var(--text); max-width: 700px;
+            margin-bottom: 12px;
+        }
+        .hero h1 em {
+            font-style: normal;
+            background: linear-gradient(135deg, #C5A3FF, #82BFFF);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero .tagline {
+            font-size: 1.2rem; color: var(--text-muted);
+            max-width: 560px; margin-bottom: 40px;
+            font-weight: 500;
+        }
+        .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+        .btn-pastel {
+            padding: 14px 36px; border-radius: 50px;
+            font-weight: 700; font-size: 1rem;
+            border: none; cursor: pointer; transition: all 0.35s;
+            font-family: 'Quicksand', sans-serif;
+        }
+        .btn-fill {
+            background: linear-gradient(135deg, #D5C6F0, #B8D8F0);
+            color: var(--text);
+            box-shadow: 0 6px 24px rgba(213,198,240,0.4);
+        }
+        .btn-fill:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(213,198,240,0.55); }
+        .btn-outline {
+            background: transparent; color: var(--text);
+            border: 2px solid var(--lavender);
+        }
+        .btn-outline:hover { background: var(--lavender); color: var(--white); transform: translateY(-3px); }
+
+        .hero-visual {
+            margin-top: 50px;
+            display: flex; gap: 20px; justify-content: center;
+        }
+        .hero-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px 24px; min-width: 160px;
+            text-align: center; box-shadow: var(--shadow);
+            transition: transform 0.5s; animation: gentleFloat 6s ease-in-out infinite;
+        }
+        .hero-card:nth-child(2) { animation-delay: 1s; }
+        .hero-card:nth-child(3) { animation-delay: 2s; }
+        .hero-card .hc-icon { font-size: 2.2rem; margin-bottom: 8px; display: block; }
+        .hero-card h4 { font-size: 0.95rem; color: var(--text); }
+        .hero-card p { font-size: 0.82rem; color: var(--text-muted); }
+
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* ===== SECTION BASE ===== */
+        .section { padding: 100px 24px; position: relative; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 56px; }
+        .section-header .label {
+            font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 2px; color: #C5A3FF; margin-bottom: 8px;
+        }
+        .section-header h2 { font-size: 2.4rem; color: var(--text); margin-bottom: 12px; }
+        .section-header p { font-size: 1.05rem; color: var(--text-muted); max-width: 540px; margin: 0 auto; }
+
+        /* ===== ABOUT ===== */
+        .about { background: var(--white); }
+        .about-content {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+        }
+        .about-text h3 { font-size: 1.4rem; margin-bottom: 16px; color: var(--text); }
+        .about-text p { color: var(--text-muted); margin-bottom: 16px; }
+        .about-stats {
+            display: flex; gap: 24px; margin-top: 24px;
+        }
+        .stat-bubble {
+            background: linear-gradient(135deg, rgba(213,198,240,0.15), rgba(184,216,240,0.15));
+            border-radius: 16px; padding: 20px 24px;
+            text-align: center; flex: 1;
+            border: 1px solid rgba(213,198,240,0.2);
+        }
+        .stat-bubble .stat-num {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem; font-weight: 700; color: #C5A3FF;
+        }
+        .stat-bubble .stat-label { font-size: 0.82rem; color: var(--text-muted); }
+
+        .about-visual {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+        }
+        .about-v-card {
+            background: var(--cream); border-radius: 16px;
+            padding: 24px; text-align: center;
+            border: 1px solid rgba(213,198,240,0.15);
+            transition: all 0.3s;
+        }
+        .about-v-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+        .about-v-card:nth-child(2) { margin-top: 20px; }
+        .about-v-card:nth-child(3) { margin-top: -20px; }
+        .about-v-card .av-icon { font-size: 2rem; margin-bottom: 8px; display: block; }
+        .about-v-card h4 { font-size: 0.9rem; color: var(--text); }
+
+        /* ===== SERVICES ===== */
+        .services { background: var(--cream); }
+        .services-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px;
+        }
+        .srv-card {
+            background: var(--white); border-radius: var(--radius);
+            padding: 32px 24px; text-align: center;
+            border: 1px solid rgba(213,198,240,0.1);
+            transition: all 0.4s; cursor: default;
+        }
+        .srv-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--lavender);
+        }
+        .srv-card .s-icon {
+            width: 56px; height: 56px; border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; margin: 0 auto 16px;
+        }
+        .srv-card:nth-child(odd) .s-icon { background: rgba(213,198,240,0.2); }
+        .srv-card:nth-child(even) .s-icon { background: rgba(184,216,240,0.2); }
+        .srv-card h3 { font-size: 1rem; color: var(--text); }
+
+        /* ===== ASSESSMENT ===== */
+        .assessment { background: var(--white); }
+        .assess-banner {
+            background: linear-gradient(135deg, #E8DCF7, #D1E5F5);
+            border-radius: 28px; padding: 48px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+            align-items: center; margin-bottom: 40px;
+        }
+        .assess-banner h3 { font-size: 1.8rem; color: var(--text); margin-bottom: 12px; }
+        .assess-banner p { color: var(--text-muted); margin-bottom: 20px; }
+        .assess-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(255,255,255,0.5); padding: 10px 20px;
+            border-radius: 50px; font-weight: 600; font-size: 0.9rem;
+        }
+        .assess-types-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px;
+        }
+        .a-type {
+            background: var(--cream); border-radius: 16px;
+            padding: 20px; text-align: center;
+            border: 1px solid rgba(213,198,240,0.15);
+            transition: all 0.3s;
+        }
+        .a-type:hover { background: var(--white); box-shadow: var(--shadow); transform: translateY(-3px); }
+        .a-type .at-icon { font-size: 1.6rem; margin-bottom: 8px; display: block; }
+        .a-type h4 { font-size: 0.9rem; color: var(--text); }
+
+        /* ===== WHY CHOOSE ===== */
+        .why { background: var(--cream); }
+        .why-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;
+        }
+        .why-item {
+            background: var(--white); border-radius: var(--radius);
+            padding: 32px; display: flex; gap: 16px;
+            border: 1px solid rgba(213,198,240,0.1);
+            transition: all 0.4s;
+        }
+        .why-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--lavender); }
+        .why-item .w-icon {
+            width: 48px; height: 48px; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; flex-shrink: 0;
+            background: linear-gradient(135deg, rgba(213,198,240,0.2), rgba(184,216,240,0.2));
+        }
+        .why-item h3 { font-size: 1.05rem; margin-bottom: 4px; color: var(--text); }
+        .why-item p { font-size: 0.88rem; color: var(--text-muted); }
+
+        /* ===== ENVIRONMENT ===== */
+        .environment { background: var(--white); }
+        .env-flex {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+        }
+        .env-item {
+            background: var(--cream); border-radius: var(--radius);
+            padding: 36px; transition: all 0.4s;
+            border: 1px solid rgba(213,198,240,0.1);
+        }
+        .env-item:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+        .env-item .e-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+        .env-item h3 { font-size: 1.1rem; margin-bottom: 6px; color: var(--text); }
+        .env-item p { font-size: 0.9rem; color: var(--text-muted); }
+
+        /* ===== PARENT ===== */
+        .parent { background: var(--cream); }
+        .parent-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+        }
+        .p-card {
+            background: var(--white); border-radius: var(--radius);
+            padding: 40px 28px; text-align: center;
+            border: 1px solid rgba(213,198,240,0.1);
+            transition: all 0.4s;
+        }
+        .p-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+        .p-card .pi { font-size: 2.4rem; margin-bottom: 14px; display: block; }
+        .p-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+        .p-card p { font-size: 0.88rem; color: var(--text-muted); }
+
+        /* ===== ACTIVITIES ===== */
+        .activities { background: var(--white); }
+        .act-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px;
+        }
+        .act-tag {
+            background: var(--cream); border-radius: 16px;
+            padding: 20px; text-align: center;
+            border: 1px solid rgba(213,198,240,0.15);
+            transition: all 0.3s;
+        }
+        .act-tag:hover { background: var(--white); box-shadow: var(--shadow); transform: scale(1.03); }
+        .act-tag .act-i { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+        .act-tag h4 { font-size: 0.88rem; color: var(--text); }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: linear-gradient(135deg, #4A3F5C, #6B5F82);
+            color: var(--white); padding: 60px 24px 30px;
+        }
+        .footer-inner {
+            max-width: 1100px; margin: 0 auto;
+            display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        }
+        .footer h3 { font-size: 1.6rem; margin-bottom: 12px; }
+        .footer p { opacity: 0.85; font-size: 0.92rem; margin-bottom: 6px; }
+        .footer-links a { display: block; padding: 3px 0; opacity: 0.75; transition: 0.3s; font-size: 0.92rem; }
+        .footer-links a:hover { opacity: 1; }
+        .footer-bottom {
+            max-width: 1100px; margin: 36px auto 0;
+            padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.15);
+            text-align: center; font-size: 0.85rem; opacity: 0.7;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .about-content { grid-template-columns: 1fr; }
+            .assess-banner { grid-template-columns: 1fr; }
+            .env-flex { grid-template-columns: 1fr; }
+            .parent-grid { grid-template-columns: 1fr; }
+            .footer-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero h1 { font-size: 2.8rem; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            .nav-links.open {
+                display: flex; flex-direction: column;
+                position: absolute; top: 100%; left: 0; width: 100%;
+                background: var(--cream); padding: 20px; gap: 14px;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+                border-bottom: 1px solid rgba(213,198,240,0.2);
+            }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-visual { flex-wrap: wrap; }
+            .hero-card { min-width: 140px; }
+            .section-header h2 { font-size: 1.8rem; }
+            .about-stats { flex-direction: column; }
+            .why-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .services-grid, .assess-types-grid { grid-template-columns: 1fr; }
+            .hero-btns { flex-direction: column; align-items: center; }
+            .about-visual { grid-template-columns: 1fr; }
+            .about-v-card:nth-child(2) { margin-top: 0; }
+            .about-v-card:nth-child(3) { margin-top: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">We<span>Calp</span></a>
+            <div class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#assessment">Assessment</a>
+                <a href="#why">Why Us</a>
+                <a href="#activities">Activities</a>
+                <button class="nav-cta-btn" id="navCtaBtn">Book Assessment</button>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="hero-inner">
+            <div class="hero-badge">🌸 Gentle care since 2022</div>
+            <h1>Helping Special Children Grow with <em>Care</em></h1>
+            <p class="tagline">Since 2022, WeCalp has been providing high quality and results-oriented therapy services for special needs children.</p>
+            <div class="hero-btns">
+                <button class="btn-pastel btn-fill" id="heroBookBtn">Book Assessment</button>
+                <button class="btn-pastel btn-outline" id="heroExploreBtn">Explore Programs</button>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <span class="hc-icon">💜</span>
+                    <h4>100+ Children</h4>
+                    <p>Helped &amp; growing</p>
+                </div>
+                <div class="hero-card">
+                    <span class="hc-icon">🌿</span>
+                    <h4>Safe Space</h4>
+                    <p>Calm &amp; nurturing</p>
+                </div>
+                <div class="hero-card">
+                    <span class="hc-icon">🎯</span>
+                    <h4>Personalized</h4>
+                    <p>Unique plans</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text reveal">
+                    <div class="section-header" style="text-align:left;">
+                        <p class="label">About Us</p>
+                        <h2>A Nurturing Space for Every Child</h2>
+                    </div>
+                    <p>WeCalp is a therapy and development center dedicated to special needs children. We focus on growth, overcoming deficiencies, and building essential life skills — all within a gentle, supportive environment.</p>
+                    <p>Our programs serve individuals from as young as 3 months up to 28 years, ensuring continuous support through every stage of development.</p>
+                    <div class="about-stats">
+                        <div class="stat-bubble">
+                            <div class="stat-num">100+</div>
+                            <div class="stat-label">Children Helped</div>
+                        </div>
+                        <div class="stat-bubble">
+                            <div class="stat-num">3mo–28y</div>
+                            <div class="stat-label">Age Range</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual reveal">
+                    <div class="about-v-card"><span class="av-icon">🌱</span><h4>Growth Focused</h4></div>
+                    <div class="about-v-card"><span class="av-icon">💪</span><h4>Skill Building</h4></div>
+                    <div class="about-v-card"><span class="av-icon">🤗</span><h4>Emotional Support</h4></div>
+                    <div class="about-v-card"><span class="av-icon">🎓</span><h4>Special Education</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="label">Our Services</p>
+                <h2>Therapy &amp; Learning Programs</h2>
+                <p>Comprehensive, compassionate support tailored to each child's unique needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="srv-card reveal"><div class="s-icon">🌅</div><h3>Early Intervention</h3></div>
+                <div class="srv-card reveal"><div class="s-icon">🤲</div><h3>Occupational Therapy</h3></div>
+                <div class="srv-card reveal"><div class="s-icon">🗣️</div><h3>Speech Therapy</h3></div>
+                <div class="srv-card reveal"><div class="s-icon">🧩</div><h3>ABA Therapy</h3></div>
+                <div class="srv-card reveal"><div class="s-icon">📚</div><h3>Special Education</h3></div>
+                <div class="srv-card reveal"><div class="s-icon">🎮</div><h3>Play-Based Learning</h3></div>
+                <div class="srv-card reveal"><div class="s-icon">🧠</div><h3>Cognitive Development</h3></div>
+                <div class="srv-card reveal"><div class="s-icon">👩‍🏫</div><h3>One-on-One Learning</h3></div>
+                <div class="srv-card reveal"><div class="s-icon">🎨</div><h3>Hobbies &amp; Arts</h3></div>
+                <div class="srv-card reveal"><div class="s-icon">🛒</div><h3>Real-World Training</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ASSESSMENT -->
+    <section class="section assessment" id="assessment">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="label">Assessment</p>
+                <h2>Comprehensive Evaluation</h2>
+                <p>The first step toward meaningful progress</p>
+            </div>
+            <div class="assess-banner reveal">
+                <div>
+                    <h3>Detailed Computerized Reports</h3>
+                    <p>Our multi-dimensional assessments identify each child's strengths, challenges, and optimal learning pathways. Every report is generated with precision.</p>
+                    <span class="assess-badge">📊 Computerized Report Included</span>
+                </div>
+                <div style="text-align:center;font-size:6rem;line-height:1;">📋</div>
+            </div>
+            <div class="assess-types-grid">
+                <div class="a-type reveal"><span class="at-icon">📖</span><h4>Academic</h4></div>
+                <div class="a-type reveal"><span class="at-icon">🎯</span><h4>Skill</h4></div>
+                <div class="a-type reveal"><span class="at-icon">💡</span><h4>Aptitude</h4></div>
+                <div class="a-type reveal"><span class="at-icon">🔧</span><h4>Functional</h4></div>
+                <div class="a-type reveal"><span class="at-icon">🤲</span><h4>Occupational Therapy</h4></div>
+                <div class="a-type reveal"><span class="at-icon">🗣️</span><h4>Speech &amp; Language</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE -->
+    <section class="section why" id="why">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="label">Why WeCalp</p>
+                <h2>Why Families Trust Us</h2>
+                <p>Built on compassion, transparency, and measurable outcomes</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-item reveal"><div class="w-icon">🏆</div><div><h3>Results-Oriented</h3><p>Focused on measurable, meaningful growth for every child.</p></div></div>
+                <div class="why-item reveal"><div class="w-icon">📈</div><div><h3>Continuous Improvement</h3><p>Evolving our methods with the latest therapeutic research.</p></div></div>
+                <div class="why-item reveal"><div class="w-icon">👨‍👩‍👧</div><div><h3>Parent Collaboration</h3><p>Parents are active partners in every therapy decision.</p></div></div>
+                <div class="why-item reveal"><div class="w-icon">🔒</div><div><h3>Safe &amp; Secure</h3><p>CCTV, sanitization, and a warm, protected environment.</p></div></div>
+                <div class="why-item reveal"><div class="w-icon">🎯</div><div><h3>Personalized Programs</h3><p>Custom therapy plans designed for each child's needs.</p></div></div>
+                <div class="why-item reveal"><div class="w-icon">💰</div><div><h3>Affordable Care</h3><p>Quality therapy accessible to all families.</p></div></div>
+                <div class="why-item reveal"><div class="w-icon">💻</div><div><h3>Progress Tracking Software</h3><p>Real-time monitoring of your child's milestones.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENVIRONMENT -->
+    <section class="section environment" id="env">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="label">Environment</p>
+                <h2>A Space Designed for Comfort</h2>
+                <p>Every detail crafted for safety, engagement, and peace of mind</p>
+            </div>
+            <div class="env-flex">
+                <div class="env-item reveal"><span class="e-icon">📱</span><h3>Smart Technology</h3><p>Smart boards, tablets, and interactive tools for engaging learning.</p></div>
+                <div class="env-item reveal"><span class="e-icon">🎪</span><h3>Playful Spaces</h3><p>Colorful areas designed to encourage exploration and joy.</p></div>
+                <div class="env-item reveal"><span class="e-icon">🛡️</span><h3>Safe &amp; Comfortable</h3><p>Child-proofed, sanitized spaces where every child feels at home.</p></div>
+                <div class="env-item reveal"><span class="e-icon">🤝</span><h3>Social Interaction</h3><p>Group activities for building social skills and friendships.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARENT -->
+    <section class="section parent" id="parent">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="label">For Parents</p>
+                <h2>Your Role Matters</h2>
+                <p>We empower you with the tools and guidance to support your child at home</p>
+            </div>
+            <div class="parent-grid">
+                <div class="p-card reveal"><span class="pi">🏠</span><h3>Home Learning Guidance</h3><p>Structured activities and tips for continued growth at home.</p></div>
+                <div class="p-card reveal"><span class="pi">📊</span><h3>Real-Time Tracking</h3><p>Monitor progress anytime through our dedicated platform.</p></div>
+                <div class="p-card reveal"><span class="pi">🩺</span><h3>Doctor Support</h3><p>Coordination with your child's healthcare providers.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACTIVITIES -->
+    <section class="section activities" id="activities">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="label">Beyond Therapy</p>
+                <h2>Joyful Activities</h2>
+                <p>Enriching experiences that build memories and life skills</p>
+            </div>
+            <div class="act-grid">
+                <div class="act-tag reveal"><span class="act-i">🌳</span><h4>Picnics</h4></div>
+                <div class="act-tag reveal"><span class="act-i">🌙</span><h4>Night Stays</h4></div>
+                <div class="act-tag reveal"><span class="act-i">🏋️</span><h4>Exercise</h4></div>
+                <div class="act-tag reveal"><span class="act-i">🧘</span><h4>Meditation</h4></div>
+                <div class="act-tag reveal"><span class="act-i">🍽️</span><h4>Eating Skills</h4></div>
+                <div class="act-tag reveal"><span class="act-i">👕</span><h4>Dressing</h4></div>
+                <div class="act-tag reveal"><span class="act-i">🧹</span><h4>Grooming</h4></div>
+                <div class="act-tag reveal"><span class="act-i">🎵</span><h4>Music &amp; Dance</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+        <div class="footer-inner">
+            <div>
+                <h3>WeCalp</h3>
+                <p>Gentle care for special children since 2022.</p>
+                <p>Every child deserves to be understood and supported.</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom:10px;font-size:1rem;">Quick Links</h4>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#assessment">Assessment</a>
+                    <a href="#why">Why WeCalp</a>
+                </div>
+            </div>
+            <div>
+                <h4 style="margin-bottom:10px;font-size:1rem;">Contact</h4>
+                <p>📧 hello@wecalp.com</p>
+                <p>📞 +91 XXXXX XXXXX</p>
+                <p>📍 Your City, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Made with 💜 for special children | © 2024 WeCalp</p>
+        </div>
+    </footer>
+
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('active'), i * 60);
+                }
+            });
+        }, { threshold: 0.12 });
+        reveals.forEach(r => observer.observe(r));
+
+        document.getElementById('hamburger').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
