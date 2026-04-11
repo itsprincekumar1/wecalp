@@ -55,30 +55,30 @@ include 'includes/header.php';
                         <div class="info-icon">📍</div>
                         <div>
                             <h4>Visit Us</h4>
-                            <p>WeCalp Center<br>Your City, India</p>
+                            <p>Rz G266A Sitapuri Street no 13 part 2 <br>New Delhi, 110045 India</p>
                         </div>
                     </div>
                     <div class="contact-info-card">
                         <div class="info-icon">📞</div>
                         <div>
                             <h4>Call Us</h4>
-                            <p>+91 XXXXX XXXXX<br>Mon – Sat: 9 AM – 6 PM</p>
+                            <p>+91 98185 77161<br>Mon – Sat: 9 AM – 6 PM</p>
                         </div>
                     </div>
                     <div class="contact-info-card">
                         <div class="info-icon">📧</div>
                         <div>
                             <h4>Email Us</h4>
-                            <p>hello@wecalp.com<br>We reply within 24 hours</p>
+                            <p>org@wecalp.in<br>We reply within 24 hours</p>
                         </div>
                     </div>
 
                     <!-- Quick Actions -->
                     <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px;">
-                        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" class="btn-primary" style="flex:1; justify-content:center; min-width:140px; font-size:0.95rem; padding:12px 20px;">
+                        <a href="https://wa.me/919818577161" target="_blank" rel="noopener" class="btn-primary" style="flex:1; justify-content:center; min-width:140px; font-size:0.95rem; padding:12px 20px;">
                             💬 WhatsApp
                         </a>
-                        <a href="tel:+91XXXXXXXXXX" class="btn-secondary" style="flex:1; text-align:center; min-width:140px; font-size:0.95rem; padding:12px 20px;">
+                        <a href="tel:+919818577161" class="btn-secondary" style="flex:1; text-align:center; min-width:140px; font-size:0.95rem; padding:12px 20px;">
                             📞 Call Now
                         </a>
                     </div>
