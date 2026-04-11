@@ -183,6 +183,7 @@ ul { list-style: none; }
 .nav-social .wa { color: #25D366; }
 .nav-social .ig { color: #E4405F; }
 .nav-social .fb { color: #1877F2; }
+.nav-social .yt { color: #FF0000; }
 
 .nav-cta {
     background: var(--sun-yellow); color: var(--text);
