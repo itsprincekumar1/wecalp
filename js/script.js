@@ -46,6 +46,64 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ===== TESTIMONIALS CAROUSEL =====
+    function initTestiCarousel() {
+        const track = document.getElementById('testiTrack');
+        const prevBtn = document.getElementById('testiPrev');
+        const nextBtn = document.getElementById('testiNext');
+        const dotsContainer = document.getElementById('testiDots');
+
+        if (!track || !dotsContainer) return;
+
+        const items = track.querySelectorAll('.testi-item');
+        const total = items.length;
+        if (total === 0) return;
+
+        let current = 0;
+        let autoTimer = null;
+
+        // Create dots
+        for (let i = 0; i < total; i++) {
+            const dot = document.createElement('button');
+            dot.classList.add('testi-dot');
+            dot.setAttribute('type', 'button');
+            dot.setAttribute('aria-label', `Go to testimonial ${i + 1}`);
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(dot);
+        }
+
+        const dots = dotsContainer.querySelectorAll('.testi-dot');
+
+        function goTo(index) {
+            items[current].classList.remove('active');
+            dots[current].classList.remove('active');
+            current = (index + total) % total;
+            items[current].classList.add('active');
+            dots[current].classList.add('active');
+        }
+
+        function next() { goTo(current + 1); }
+        function prev() { goTo(current - 1); }
+
+        if (prevBtn) prevBtn.addEventListener('click', () => { prev(); resetAuto(); });
+        if (nextBtn) nextBtn.addEventListener('click', () => { next(); resetAuto(); });
+
+        // Auto-advance
+        function startAuto() { autoTimer = setInterval(next, 7000); }
+        function resetAuto() { clearInterval(autoTimer); startAuto(); }
+        startAuto();
+
+        // Pause on hover
+        const carousel = track.closest('.testi-carousel');
+        if (carousel) {
+            carousel.addEventListener('mouseenter', () => clearInterval(autoTimer));
+            carousel.addEventListener('mouseleave', startAuto);
+        }
+    }
+
+    initTestiCarousel();
+
     // ===== GALLERY MODAL =====
     const galleryItems = document.querySelectorAll('.gallery-item');
     const galleryModal = document.getElementById('galleryModal');

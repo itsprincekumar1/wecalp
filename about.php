@@ -21,6 +21,49 @@ include 'includes/header.php';
         </div>
     </section>
 
+    <!-- MEET FOUNDER -->
+    <section class="section founder-section">
+        <div class="container">
+            <div class="founder-grid">
+                <div class="founder-content reveal">
+                    <span class="founder-badge">👋 Our Founder</span>
+                    <h2>Meet Priyanka Kumari</h2>
+                    <p class="founder-intro">The heart and soul behind WeCalp's mission to transform lives through specialized therapy and education.</p>
+                    
+                    <div class="founder-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">🎓</span>
+                            <div>
+                                <h4>Speciality</h4>
+                                <p>Special Educator & Counsellor</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⭐</span>
+                            <div>
+                                <h4>Experience</h4>
+                                <p>5+ years</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="founder-description">
+                        Priyanka's passion for special needs education stems from years of working directly with children and families. With her deep understanding of each child's unique challenges and strengths, she has built WeCalp into a trusted sanctuary where every child can thrive and grow.
+                    </p>
+
+                    <a href="contact.php" class="btn-primary">Get In Touch</a>
+                </div>
+
+                <div class="founder-image reveal">
+                    <div class="founder-image-placeholder">
+                        <span>📷</span>
+                        <p>Founder Image</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ABOUT US CONTENT -->
     <section class="section about" id="about-content">
         <div class="container">
@@ -59,11 +102,6 @@ include 'includes/header.php';
                     <h3>Dedicated Staff</h3>
                     <p>Our team of certified therapists, special educators, and support staff are passionate about what they do. With specialized training and continuous professional development, they bring expertise, empathy, and energy to every session with every child.</p>
                 </div>
-                <div class="about-content-card reveal">
-                    <span class="card-icon">🎉</span>
-                    <h3>Fun & Outings</h3>
-                    <p>Beyond therapy, we organize picnics, field visits, night stays, cultural events, and celebration days. These activities help children develop social skills, build confidence, and create beautiful memories that last a lifetime.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -78,9 +116,9 @@ include 'includes/header.php';
             <div class="team-grid">
                 <div class="team-card reveal">
                     <div class="team-avatar">👩‍⚕️</div>
-                    <h3>Dr. Priya Sharma</h3>
+                    <h3>Dr. Priyanka Kumari</h3>
                     <div class="role">Founder & Lead Therapist</div>
-                    <p>With over 10 years of experience in child therapy and special education, Dr. Priya founded WeCalp to bring world-class therapy to every child.</p>
+                    <p>With over 5+ years of experience in child therapy and special education, Dr. Priya founded WeCalp to bring world-class therapy to every child.</p>
                 </div>
                 <div class="team-card reveal">
                     <div class="team-avatar">👩‍🏫</div>

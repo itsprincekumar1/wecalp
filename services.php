@@ -33,7 +33,7 @@ include 'includes/header.php';
                 <div class="service-page-card reveal">
                     <span class="service-icon">🌅</span>
                     <h3>Early Intervention</h3>
-                    <p>For children aged 3 months to 3 years. Our early intervention program identifies developmental delays early and provides targeted support to build a strong foundation for future growth.</p>
+                    <p>For children aged 1 year to 3 years. Our early intervention program identifies developmental delays early and provides targeted support to build a strong foundation for future growth.</p>
                     <a href="services/early-intervention.php" class="btn-learn-more">Learn More →</a>
                 </div>
 
@@ -42,6 +42,14 @@ include 'includes/header.php';
                     <span class="service-icon">📚</span>
                     <h3>Special Education</h3>
                     <p>Individualized education plans designed for children with diverse learning needs. Our special educators create engaging, adaptive curricula that make learning accessible and enjoyable.</p>
+                    <a href="services/special-education.php" class="btn-learn-more">Learn More →</a>
+                </div>
+
+                <!-- Councelling -->
+                <div class="service-page-card reveal">
+                    <span class="service-icon">📚</span>
+                    <h3>Councelling</h3>
+                    <p>Personal councelling plans designed for children with diverse needs. Our special councellors helps children to get a comfortable and open environment to help them with their difficulties.</p>
                     <a href="services/special-education.php" class="btn-learn-more">Learn More →</a>
                 </div>
 

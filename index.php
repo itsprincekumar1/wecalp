@@ -18,7 +18,7 @@ include 'includes/header.php';
         <div class="hero-inner">
             <div class="hero-text">
                 <h1>We<span>Calp</span></h1>
-                <p class="tagline">Helping Special Children Grow with Care 🌟</p>
+                <p class="tagline">Where every child achieves limitless potential 🌟</p>
                 <p class="intro">Since 2022, WeCalp has been providing high quality and results-oriented therapy services for special needs children.</p>
                 <div class="hero-btns">
                     <a href="contact.php" class="btn-primary">📋 Book Assessment</a>
@@ -80,6 +80,8 @@ include 'includes/header.php';
             <div class="services-grid">
                 <div class="service-card reveal"><span class="icon">🌅</span><h3>Early Intervention</h3></div>
                 <div class="service-card reveal"><span class="icon">🤲</span><h3>Occupational Therapy</h3></div>
+                <div class="service-card reveal"><span class="icon">🏡</span><h3>Provide Home Sessions</h3></div>
+                <div class="service-card reveal"><span class="icon">📚</span><h3>Individualized Education Plan(IEP)</h3></div>
                 <div class="service-card reveal"><span class="icon">🗣️</span><h3>Speech Therapy</h3></div>
                 <div class="service-card reveal"><span class="icon">🧩</span><h3>ABA Therapy</h3></div>
                 <div class="service-card reveal"><span class="icon">📚</span><h3>Special Education</h3></div>
@@ -125,13 +127,76 @@ include 'includes/header.php';
                 <p>What makes us the trusted partner for your child's growth</p>
             </div>
             <div class="why-grid">
-                <div class="why-card reveal"><span class="card-icon">🏆</span><h3>Results-Oriented Approach</h3><p>We focus on measurable outcomes and tangible growth for every child.</p></div>
-                <div class="why-card reveal"><span class="card-icon">📈</span><h3>Continuous Improvement</h3><p>Constantly evolving methods to offer cutting-edge therapy techniques.</p></div>
-                <div class="why-card reveal"><span class="card-icon">👨‍👩‍👧</span><h3>Parent Collaboration</h3><p>Parents are partners in the therapy journey, not spectators.</p></div>
-                <div class="why-card reveal"><span class="card-icon">🔒</span><h3>Safe &amp; Secure</h3><p>CCTV surveillance, sanitization protocols, and a warm, secure environment.</p></div>
-                <div class="why-card reveal"><span class="card-icon">🎯</span><h3>Personalized Programs</h3><p>Every child receives a custom therapy plan based on their unique needs.</p></div>
-                <div class="why-card reveal"><span class="card-icon">💰</span><h3>Affordable Services</h3><p>Quality therapy that doesn't break the bank — accessible to all families.</p></div>
-                <div class="why-card reveal"><span class="card-icon">💻</span><h3>Smart Progress Tracking</h3><p>Unique software to track your child's milestones and progress in real time.</p></div>
+                <div class="why-card reveal"><span class="card-icon">🏆</span><h3>Personalized 1 to 1 session</h3><p>Each child receives dedicated one-on-one attention from a trained therapist, ensuring focused care tailored to their individual needs.</p></div>
+                <div class="why-card reveal"><span class="card-icon">📈</span><h3>Home Based therapy</h3><p>Therapy sessions conducted in the comfort of your home, helping your child learn and grow in a familiar, stress-free environment.</p></div>
+                <div class="why-card reveal"><span class="card-icon">👨‍👩‍👧</span><h3>Parent Guidance and Support</h3><p>We empower parents with practical strategies and ongoing support to reinforce therapy goals at home every day.</p></div>
+                <div class="why-card reveal"><span class="card-icon">🎯</span><h3>Experience Special Educators</h3><p>Our team of qualified special educators brings years of hands-on experience in working with children across diverse needs.</p></div>
+                <div class="why-card reveal"><span class="card-icon">💰</span><h3>Regular Progress Tracking</h3><p>Detailed assessments and progress reports at regular intervals so you can see your child's growth milestones clearly.</p></div>
+                <div class="why-card reveal"><span class="card-icon">💻</span><h3>Collabarative Approach</h3><p>Therapists, educators, and parents work together as a unified team to create the best outcomes for every child.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW WE WORK -->
+    <section class="section how-we-work" id="how-we-work">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>How We Work 🛤️</h2>
+                <p>Your child's journey with us — step by step</p>
+            </div>
+            <div class="hww-roadmap">
+                <!-- Connecting path line -->
+                <div class="hww-path" aria-hidden="true"></div>
+
+                <!-- Step 1 -->
+                <div class="hww-step hww-left reveal">
+                    <div class="hww-card">
+                        <span class="hww-emoji">📞</span>
+                        <h3>Connect</h3>
+                        <p>Reach out to us via phone, WhatsApp, or our contact form. We listen to your concerns and schedule a convenient time to meet.</p>
+                    </div>
+                    <div class="hww-node"><span>1</span></div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="hww-step hww-right reveal">
+                    <div class="hww-node"><span>2</span></div>
+                    <div class="hww-card">
+                        <span class="hww-emoji">🔍</span>
+                        <h3>Child Assessment</h3>
+                        <p>Our specialists conduct a comprehensive evaluation covering academic, functional, speech, and occupational abilities with a detailed computerized report.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="hww-step hww-left reveal">
+                    <div class="hww-card">
+                        <span class="hww-emoji">📋</span>
+                        <h3>Personalised IEP</h3>
+                        <p>Based on the assessment, we craft an Individualized Education Plan with clear goals, timelines, and therapy strategies tailored to your child.</p>
+                    </div>
+                    <div class="hww-node"><span>3</span></div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="hww-step hww-right reveal">
+                    <div class="hww-node"><span>4</span></div>
+                    <div class="hww-card">
+                        <span class="hww-emoji">🧩</span>
+                        <h3>Regular Therapy Session</h3>
+                        <p>Dedicated one-on-one sessions with trained therapists using play-based, evidence-driven techniques in a nurturing environment.</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="hww-step hww-left reveal">
+                    <div class="hww-card">
+                        <span class="hww-emoji">📊</span>
+                        <h3>Progress Monitoring</h3>
+                        <p>Regular assessments, parent meetings, and real-time progress reports ensure your child is consistently moving towards their milestones.</p>
+                    </div>
+                    <div class="hww-node"><span>5</span></div>
+                </div>
             </div>
         </div>
     </section>
@@ -207,6 +272,138 @@ include 'includes/header.php';
                 <div class="activity-chip"><span class="a-icon">👕</span><h4>Dressing Skills</h4></div>
                 <div class="activity-chip"><span class="a-icon">🧹</span><h4>Grooming Skills</h4></div>
                 <div class="activity-chip"><span class="a-icon">🎵</span><h4>Music &amp; Dance</h4></div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- TRUST SECTION -->
+    <section class="section trust" id="trust">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Why Families Trust Us 🤝</h2>
+                <p>Our credentials, experience, and commitment to excellence</p>
+            </div>
+            <div class="trust-grid">
+                <div class="trust-card reveal">
+                    <span class="trust-icon">📜</span>
+                    <h3>Certified Professionals</h3>
+                    <p>All our therapists and educators are certified with specialized training in child development and special education.</p>
+                </div>
+                <div class="trust-card reveal">
+                    <span class="trust-icon">⏰</span>
+                    <h3>4+ Years Experience</h3>
+                    <p>Our founding team brings over 4 years of hands-on experience working with special needs children.</p>
+                </div>
+                <div class="trust-card reveal">
+                    <span class="trust-icon">🏥</span>
+                    <h3>Evidence-Based Approach</h3>
+                    <p>We use scientifically-proven therapy methods including ABA, speech therapy, and occupational therapy.</p>
+                </div>
+                <div class="trust-card reveal">
+                    <span class="trust-icon">🎓</span>
+                    <h3>Continuous Learning</h3>
+                    <p>Our team undergoes regular professional development to stay updated with latest therapy techniques.</p>
+                </div>
+                <div class="trust-card reveal">
+                    <span class="trust-icon">👨‍👩‍👧‍👦</span>
+                    <h3>100+ Success Stories</h3>
+                    <p>Over 100 children have shown remarkable growth and improvement through our comprehensive programs.</p>
+                </div>
+                <div class="trust-card reveal">
+                    <span class="trust-icon">🔒</span>
+                    <h3>Safe &amp; Supportive</h3>
+                    <p>A secure, sanitized environment where every child feels valued, protected, and encouraged to grow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>What Parents Say 💬</h2>
+                <p>Real stories from families whose children have thrived with us</p>
+            </div>
+            <div class="testi-carousel reveal">
+                <div class="testi-track" id="testiTrack">
+                    <!-- Slide 1 -->
+                    <div class="testi-item active">
+                        <div class="testi-quote-icon">❝</div>
+                        <p class="testi-body">My son has transformed so much in just 8 months! The team at WeCalp is incredibly dedicated and genuinely cares about each child's progress. His speech has improved dramatically and he's now more confident in social situations.</p>
+                        <div class="testi-rating">★★★★★</div>
+                        <div class="testi-footer">
+                            <div class="testi-avatar" style="background:linear-gradient(135deg,#FFD93D,#FFA726);">👩</div>
+                            <div>
+                                <h4 class="testi-name">Priya Mehta</h4>
+                                <p class="testi-role">Parent of Aditya, 5 years old</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="testi-item">
+                        <div class="testi-quote-icon">❝</div>
+                        <p class="testi-body">We were skeptical at first, but the personalized approach and constant communication from the team made all the difference. Our daughter's motor skills have improved remarkably and she loves coming here every single day!</p>
+                        <div class="testi-rating">★★★★★</div>
+                        <div class="testi-footer">
+                            <div class="testi-avatar" style="background:linear-gradient(135deg,#6EC6FF,#42A5F5);">👨</div>
+                            <div>
+                                <h4 class="testi-name">Rajesh Kumar</h4>
+                                <p class="testi-role">Parent of Isha, 6 years old</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="testi-item">
+                        <div class="testi-quote-icon">❝</div>
+                        <p class="testi-body">The smart tracking software is incredible! I can see my child's daily progress in real-time. It gives me so much confidence knowing exactly what's being worked on and how I can support learning at home.</p>
+                        <div class="testi-rating">★★★★★</div>
+                        <div class="testi-footer">
+                            <div class="testi-avatar" style="background:linear-gradient(135deg,#77DD77,#66BB6A);">👩</div>
+                            <div>
+                                <h4 class="testi-name">Neha Singh</h4>
+                                <p class="testi-role">Parent of Rohan, 4 years old</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="testi-item">
+                        <div class="testi-quote-icon">❝</div>
+                        <p class="testi-body">As a special educator myself, I was very picky about where to take my son. WeCalp's evidence-based approach and their qualified, caring team impressed me immediately. I cannot recommend them enough!</p>
+                        <div class="testi-rating">★★★★★</div>
+                        <div class="testi-footer">
+                            <div class="testi-avatar" style="background:linear-gradient(135deg,#FF8A80,#EF5350);">👨</div>
+                            <div>
+                                <h4 class="testi-name">Vikram Patel</h4>
+                                <p class="testi-role">Parent of Arjun, 5 years old</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="testi-item">
+                        <div class="testi-quote-icon">❝</div>
+                        <p class="testi-body">When we first came to WeCalp, our daughter couldn't express her needs at all. After just one year of therapy, she speaks in sentences and even makes jokes! The home learning guidance helped us support her growth every day.</p>
+                        <div class="testi-rating">★★★★★</div>
+                        <div class="testi-footer">
+                            <div class="testi-avatar" style="background:linear-gradient(135deg,#C5A3FF,#AB47BC);">👩</div>
+                            <div>
+                                <h4 class="testi-name">Sunita Sharma</h4>
+                                <p class="testi-role">Parent of Kavya, 7 years old</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation Buttons -->
+                <button class="testi-btn testi-prev" id="testiPrev" aria-label="Previous testimonial">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <button class="testi-btn testi-next" id="testiNext" aria-label="Next testimonial">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+                </button>
+                <!-- Dots -->
+                <div class="testi-dots" id="testiDots"></div>
             </div>
         </div>
     </section>
