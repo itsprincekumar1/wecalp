@@ -56,7 +56,7 @@ include 'includes/header.php';
 
                 <div class="founder-image reveal">
                     <div class="founder-image-placeholder">
-                        <span>📷</span>
+                        <span><img src="/images/founder.webp" alt="Priyanka"></span>
                         <p>Founder Image</p>
                     </div>
                 </div>
@@ -158,40 +158,40 @@ include 'includes/header.php';
     <section class="section" style="background: #FFF;">
         <div class="container">
             <div class="section-header reveal">
-                <h2>Our Gallery 📸</h2>
+                <h2>WeCalp Family 📸</h2>
                 <p>Glimpses of joy, growth, and beautiful moments at WeCalp</p>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item reveal">
-                    <span class="gallery-placeholder">🎨</span>
+                    <span class="gallery-placeholder"><img src="/images/gallery-1.webp" alt="Work images"></span>
                     <div class="gallery-overlay"><span>🔍</span></div>
                 </div>
                 <div class="gallery-item reveal">
-                    <span class="gallery-placeholder">🧩</span>
+                    <span class="gallery-placeholder"><img src="/images/gallery-2.webp" alt="Work images"></span>
                     <div class="gallery-overlay"><span>🔍</span></div>
                 </div>
                 <div class="gallery-item reveal">
-                    <span class="gallery-placeholder">🎵</span>
+                    <span class="gallery-placeholder"><img src="/images/gallery-3.webp" alt="Work images"></span>
                     <div class="gallery-overlay"><span>🔍</span></div>
                 </div>
                 <div class="gallery-item reveal">
-                    <span class="gallery-placeholder">🌳</span>
+                    <span class="gallery-placeholder"><img src="/images/gallery-4.webp" alt="Work images"></span>
                     <div class="gallery-overlay"><span>🔍</span></div>
                 </div>
                 <div class="gallery-item reveal">
-                    <span class="gallery-placeholder">📚</span>
+                    <span class="gallery-placeholder"><img src="/images/gallery-6.webp" alt="Work images"></span>
                     <div class="gallery-overlay"><span>🔍</span></div>
                 </div>
                 <div class="gallery-item reveal">
-                    <span class="gallery-placeholder">🤸</span>
+                    <span class="gallery-placeholder"><img src="/images/gallery-1.webp" alt="Work images"></span>
                     <div class="gallery-overlay"><span>🔍</span></div>
                 </div>
                 <div class="gallery-item reveal">
-                    <span class="gallery-placeholder">🎪</span>
+                    <span class="gallery-placeholder"><img src="/images/gallery-3.webp" alt="Work images"></span>
                     <div class="gallery-overlay"><span>🔍</span></div>
                 </div>
                 <div class="gallery-item reveal">
-                    <span class="gallery-placeholder">🧸</span>
+                    <span class="gallery-placeholder"><img src="/images/gallery-4.webp" alt="Work images"></span>
                     <div class="gallery-overlay"><span>🔍</span></div>
                 </div>
             </div>
