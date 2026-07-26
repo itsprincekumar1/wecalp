@@ -12,3 +12,8 @@
    php_flag log_errors On
 </IfModule>
 # END cPanel-generated php ini directives, do not edit
+
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^(www\.)?wecalp\.com\.shahnazalmirah\.com$ [NC]
+RewriteRule ^(.*)$ https://wecalp.com/$1 [R=301,L]
