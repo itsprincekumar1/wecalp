@@ -27,7 +27,7 @@ include 'includes/header.php';
             <div class="founder-grid">
                 <div class="founder-content reveal">
                     <span class="founder-badge">👋 Our Founder</span>
-                    <h2>Meet Priyanka Kumari</h2>
+                    <h2>Meet Priyanka</h2>
                     <p class="founder-intro">The heart and soul behind WeCalp's mission to transform lives through specialized therapy and education.</p>
                     
                     <div class="founder-details">

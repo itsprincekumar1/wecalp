@@ -53,7 +53,7 @@
                     <h4>Contact Us</h4>
                     <div class="footer-contact-item">
                         <span>📍</span>
-                        <span>Rz G266A Sitapuri Street no 13 part 2 New Delhi 110045 India</span>
+                        <span>Janakpuri New Delhi India</span>
                     </div>
                     <div class="footer-contact-item">
                         <span>📞</span>

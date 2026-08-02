@@ -55,7 +55,7 @@ include 'includes/header.php';
                         <div class="info-icon">📍</div>
                         <div>
                             <h4>Visit Us</h4>
-                            <p>Rz G266A Sitapuri Street no 13 part 2 <br>New Delhi, 110045 India</p>
+                            <p>Janakpuri New Delhi, India</p>
                         </div>
                     </div>
                     <div class="contact-info-card">
