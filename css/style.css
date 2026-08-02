@@ -274,13 +274,44 @@ ul {
 }
 
 .nav-logo {
-    font-family: 'Baloo 2', cursive;
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--sky-blue);
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
+}
+
+/* Logo image */
+.nav-logo-img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    display: inline-block;
+}
+
+/* Accompanying brand text (kept for accessibility/SEO). Visible on larger screens, scaled on smaller).
+   Use a dedicated small class so overall .nav-logo remains layout-only. */
+.nav-logo-text {
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--sky-blue);
+    line-height: 1;
+}
+
+/* Responsive logo sizing */
+@media (max-width: 1024px) {
+    .nav-logo-img { height: 40px; }
+    .nav-logo-text { font-size: 1.1rem; }
+}
+
+@media (max-width: 640px) {
+    .nav-logo-img { height: 34px; }
+    .nav-logo-text { font-size: 1rem; }
+}
+
+@media (max-width: 420px) {
+    /* On very small screens hide text to preserve space and keep logo visible */
+    .nav-logo-text { display: none; }
+    .nav-logo-img { height: 30px; }
 }
 
 .nav-logo .dot {
