@@ -31,7 +31,6 @@ if (!isset($pageDescription)) $pageDescription = 'WeCalp – Helping special chi
         <div class="nav-inner">
             <a href="<?php echo $basePath; ?>index.php" class="nav-logo">
                 <img src="<?php echo $basePath; ?>images/logo.webp" alt="WeCalp logo" class="nav-logo-img" width="180" height="48">
-                <span class="nav-logo-text">WeCalp</span>
             </a>
             <div class="nav-links" id="navLinks">
                 <a href="<?php echo $basePath; ?>index.php" class="<?php echo $currentPage === 'home' ? 'active' : ''; ?>">Home</a>
